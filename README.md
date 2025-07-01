@@ -51,7 +51,7 @@ VOTES_PER_USER_PER_DAY=
 3. **Build and run the containers**
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 4. **Access the app**
 
