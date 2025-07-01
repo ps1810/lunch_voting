@@ -28,7 +28,7 @@ A Django-based application for managing restaurant votes, with scheduled winner 
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/yourusername/lunch-voting.git
+git clone https://github.com/ps1810/lunch-voting.git
 cd lunch-voting
 ```
 
@@ -117,6 +117,13 @@ TOKEN="abc123def456..."
 
 ## Public Endpoints (No Authentication Required)
 
+### Create a restaurant:
+```bash
+curl -X POST http://localhost:8000/api/restaurants/ \
+  -H "Content-Type: application/json" \
+  -d '{"name": "New Restaurant", "cuisine_type": "Italian", "phone": "01234...", "address":"Amsterdam"}'
+```
+
 ### List all restaurants:
 ```bash
 curl http://localhost:8000/api/restaurants/
@@ -135,6 +142,18 @@ curl http://localhost:8000/api/restaurants/search/?q=pizza
 ### Get restaurants you can vote for:
 ```bash
 curl http://localhost:8000/api/restaurants/votable/
+```
+
+### Update a restaurant:
+```bash
+curl -X PUT http://localhost:8000/api/restaurants/1/ \
+  -H "Content-Type: application/json" \
+  -d '{"is_votable": false}'
+```
+
+### Delete a restaurant
+```bash
+curl -X DELETE http://localhost:8000/api/restaurants/1/
 ```
 
 ### Get today's winner:
