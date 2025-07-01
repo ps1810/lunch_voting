@@ -40,19 +40,17 @@ DJANGO_ALLOWED_HOSTS=*
 
 CELERY_BROKER_URL=redis://redis:6379/0
 CELERY_RESULT_BACKEND=redis://redis:6379/0
+
+DJANGO_SUPERUSER_USERNAME=
+DJANGO_SUPERUSER_EMAIL=
+DJANGO_SUPERUSER_PASSWORD=
 ```
 3. **Build and run the containers**
 
 ```bash
 docker-compose up --build
 ```
-4. **Run migrations & create superuser**
-
-```bash
-docker-compose exec web python manage.py migrate
-docker-compose exec web python manage.py createsuperuser
-```
-5. **Access the app**
+4. **Access the app**
 
 ```bash
 Admin: http://localhost:8000/admin
