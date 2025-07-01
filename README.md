@@ -9,7 +9,8 @@ A Django-based application for managing restaurant votes, with scheduled winner 
 - Add, update, delete restaurants
 - Users vote on where to eat (weighted voting)
 - Daily reset of votes
-- Scheduled daily winner calculation
+- No voting after 12 PM (configurable)
+- Scheduled daily winner calculation at 12 PM (configurable)
 - Admin interface for managing data
 
 ---
